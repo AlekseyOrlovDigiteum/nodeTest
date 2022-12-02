@@ -10,21 +10,16 @@ const middlewareThree = () => {
     console.log('middleware 3')
 }
 
-//Add your code here
 //-----------------------start------------------------
-
+//implement 'server' here
 
 
 
 //-------------------------end------------------------
 
+server.use(middlewareOne).use(middlewareTwo).use(middlewareThree)
 
-//add middlewares
-// <...>.use(middlewareOne).use(middlewareTwo).use(middlewareThree)
-
-//perform request
-// <...>.request('abc') 
-
+server.request('abc') 
 //prints 
 // middleware 1
 // middleware 2

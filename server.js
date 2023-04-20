@@ -1,27 +1,24 @@
-const middlewareOne = () => {
-    console.log('middleware 1')
+const middlewareOne = (req) => {
+  req.body += ' + middlewate 1'
 }
 
-const middlewareTwo = () => {
-    console.log('middleware 2')
+const middlewareTwo = (req) => {
+  req.body += ' + middleware 2'
 }
 
-const middlewareThree = () => {
-    console.log('middleware 3')
+const middlewareThree = (req) => {
+  req.body += ' + middleware 3'
 }
 
 //-----------------------start------------------------
-//implement 'server' here
-
+//implement 'server' here with 2 methods: 'use' and 'request'
 
 
 //-------------------------end------------------------
 
+// so the calling the following
 server.use(middlewareOne).use(middlewareTwo).use(middlewareThree)
+server.request(({body: 'abc'})) 
 
-server.request('abc') 
-//prints 
-// middleware 1
-// middleware 2
-// middleware 3
-// abc
+//will print 
+// abc + middleware 1 + middleware 2 + middleware 3

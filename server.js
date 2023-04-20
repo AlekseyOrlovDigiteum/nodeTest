@@ -18,7 +18,7 @@ const middlewareThree = (req) => {
 
 // so the calling the following
 server.use(middlewareOne).use(middlewareTwo).use(middlewareThree)
-server.request(({body: 'abc'})) 
+server.request({body: 'abc'}) 
 
 //will print 
 // abc + middleware 1 + middleware 2 + middleware 3

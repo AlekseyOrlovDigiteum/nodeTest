@@ -1,5 +1,5 @@
 const middlewareOne = (req) => {
-  req.body += ' + middlewate 1'
+  req.body += ' + middleware 1'
 }
 
 const middlewareTwo = (req) => {
@@ -16,9 +16,9 @@ const middlewareThree = (req) => {
 
 //-------------------------end------------------------
 
-// so the calling the following
+// if we call the following two lines
 server.use(middlewareOne).use(middlewareTwo).use(middlewareThree)
 server.request({body: 'abc'}) 
 
-//will print 
+//the output will be
 // abc + middleware 1 + middleware 2 + middleware 3
